@@ -1,0 +1,56 @@
+zai-plus-skill/
+├── SKILL.md                         # [必需] 入口文件
+│
+├── scripts/                         # 可执行脚本
+│   ├── analyze_local_video.py
+│   ├── executor.py
+│   ├── smart_analyze.py
+│   ├── video_router.py
+│   └── zai_analyze.py
+│
+├── references/                      # 参考文档（需时加载）
+│   ├── analysis_result.txt
+│   ├── COMPLETION_REPORT.md
+│   ├── DEMO_BASE64_USAGE.md
+│   ├── PROJECT_STRUCTURE.md
+│   ├── QUICK_START_ROUTER.md
+│   ├── README_IMPROVEMENTS.md
+│   └── REORGANIZATION_SUMMARY.md
+│
+├── assets/                          # 输出资源（空）
+│
+├── src/                             # 源代码模块
+│   ├── analyzers/
+│   │   ├── __init__.py
+│   │   ├── smart_analyzer.py
+│   │   └── video_analyzer.py
+│   ├── core/
+│   │   ├── __init__.py
+│   │   ├── executor.py
+│   │   └── router.py
+│   └── utils/
+│       ├── __init__.py
+│       └── config_manager.py
+│
+├── config/                          # 配置文件
+│   ├── mcp_config.json
+│   └── user_preferences.json
+│
+├── docs/                            # 用户文档
+│   ├── BASE64_USAGE.md
+│   └── QUICK_START.md
+│
+├── examples/                        # 示例代码
+│   ├── example_config.py
+│   ├── example_local_video.py
+│   ├── example_url_analysis.py
+│   └── README.md
+│
+├── tools/                           # 辅助工具
+│   └── check_environment.py
+│
+├── README.md                        # 项目说明
+├── STRUCTURE.md                     # 结构说明
+├── LICENSE                          # 许可证
+├── requirements.txt                 # 依赖
+└── .gitignore                       # Git 忽略

@@ -1,0 +1,35 @@
+{
+  "default_strategy": "auto",
+  "auto_fallback": true,
+  "max_file_size_mb": 100.0,
+  "warn_large_file": true,
+  "prefer_url": true,
+  "strategy_order": [
+    "url_direct",
+    "base64_small",
+    "base64_large"
+  ],
+  "description": "用户偏好配置文件",
+  "options": {
+    "default_strategy": {
+      "description": "默认处理策略",
+      "values": ["auto", "url_first", "base64_only"],
+      "default": "auto"
+    },
+    "auto_fallback": {
+      "description": "失败时自动切换策略",
+      "type": "boolean",
+      "default": true
+    },
+    "max_file_size_mb": {
+      "description": "最大文件大小限制（MB）",
+      "type": "number",
+      "default": 100.0
+    },
+    "prefer_url": {
+      "description": "优先使用URL方式（当两种方式都可用时）",
+      "type": "boolean",
+      "default": true
+    }
+  }
+}

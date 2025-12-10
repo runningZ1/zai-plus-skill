@@ -56,3 +56,26 @@ __pycache__/
 venv/
 env/
 ENV/
+
+# Build and distribution
+build/
+dist/
+*.egg-info/
+
+# Test cache
+.pytest_cache/
+.coverage
+htmlcov/
+
+# Backup files
+*.bak
+*.backup
+*~
+
+# Config backups (keep templates only)
+config/*.json.bak
+user_preferences.json.old
+
+# Old files (during migration)
+*.old
+*.deprecated
