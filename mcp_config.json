@@ -1,0 +1,120 @@
+{
+  "name": "zai-mcp-server",
+  "description": "\u667a\u8c31AI MCP\u670d\u52a1\u5668\uff0c\u652f\u6301GLM-4.5V\u7b49\u591a\u6a21\u6001\u6a21\u578b",
+  "package": "@z_ai/mcp-server",
+  "command": "npx",
+  "args": [
+    "-y",
+    "@z_ai/mcp-server"
+  ],
+  "type": "stdio",
+  "env": {
+    "Z_AI_API_KEY": "a0966d17779b4417adb96a314e4266f6.o7CYk5Jvb2zSgYHX",
+    "Z_AI_MODE": "glm-4.5v"
+  },
+  "tools": [
+    {
+      "name": "chat_completion",
+      "description": "\u4e0eGLM\u6a21\u578b\u8fdb\u884c\u5bf9\u8bdd\u4ea4\u4e92\uff0c\u652f\u6301\u591a\u6a21\u6001\u8f93\u5165",
+      "input_schema": {
+        "type": "object",
+        "properties": {
+          "messages": {
+            "type": "array",
+            "description": "\u5bf9\u8bdd\u6d88\u606f\u5217\u8868",
+            "items": {
+              "type": "object",
+              "properties": {
+                "role": {
+                  "type": "string",
+                  "enum": [
+                    "user",
+                    "assistant",
+                    "system"
+                  ]
+                },
+                "content": {
+                  "type": "string"
+                },
+                "images": {
+                  "type": "array",
+                  "items": {
+                    "type": "string"
+                  }
+                }
+              },
+              "required": [
+                "role",
+                "content"
+              ]
+            }
+          },
+          "model": {
+            "type": "string",
+            "default": "glm-4.5v"
+          },
+          "temperature": {
+            "type": "number",
+            "default": 0.7
+          },
+          "max_tokens": {
+            "type": "integer",
+            "default": 2000
+          }
+        },
+        "required": [
+          "messages"
+        ]
+      }
+    },
+    {
+      "name": "image_understanding",
+      "description": "\u7406\u89e3\u56fe\u50cf\u5185\u5bb9\uff0c\u652f\u6301\u591a\u6a21\u6001\u5206\u6790",
+      "input_schema": {
+        "type": "object",
+        "properties": {
+          "image_url": {
+            "type": "string",
+            "description": "\u56fe\u50cfURL\u6216base64\u7f16\u7801"
+          },
+          "question": {
+            "type": "string",
+            "description": "\u5173\u4e8e\u56fe\u50cf\u7684\u95ee\u9898"
+          }
+        },
+        "required": [
+          "image_url",
+          "question"
+        ]
+      }
+    },
+    {
+      "name": "text_generation",
+      "description": "\u7eaf\u6587\u672c\u751f\u6210\u4efb\u52a1",
+      "input_schema": {
+        "type": "object",
+        "properties": {
+          "prompt": {
+            "type": "string",
+            "description": "\u6587\u672c\u751f\u6210\u63d0\u793a"
+          },
+          "model": {
+            "type": "string",
+            "default": "glm-4"
+          },
+          "temperature": {
+            "type": "number",
+            "default": 0.7
+          },
+          "max_tokens": {
+            "type": "integer",
+            "default": 2000
+          }
+        },
+        "required": [
+          "prompt"
+        ]
+      }
+    }
+  ]
+}
