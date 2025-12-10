@@ -34,3 +34,25 @@ Thumbs.db
 # Temporary files
 *.tmp
 *.temp
+
+# ZAI Skill temporary files
+temp_*.js
+temp_*.txt
+temp_video_analysis.js
+temp_video_base64.txt
+temp_chat_script.js
+temp_image_script.js
+temp_url_script.js
+temp_base64_script.js
+
+# Python cache
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+
+# Virtual environment
+venv/
+env/
+ENV/
